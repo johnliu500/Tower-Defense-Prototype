@@ -25,7 +25,7 @@ public class cubeClickOn : MonoBehaviour
             Vector3 parentTrans = gameObject.transform.position;
             menu.transform.position = new Vector3(parentTrans.x, parentTrans.y+1, parentTrans.z);
             clickedOn = true;
-            shootsAtEnemies shoots = menu.AddComponent<shootsAtEnemies>();
+            //shootsAtEnemies shoots = menu.AddComponent<shootsAtEnemies>();
         } else {
             Destroy(menu);
             clickedOn = false;

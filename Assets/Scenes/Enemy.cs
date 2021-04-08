@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("i start");
+        //print("i start");
     }
 
     // Update is called once per frame

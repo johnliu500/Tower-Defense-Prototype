@@ -34,6 +34,9 @@ public class EnemySpawn : MonoBehaviour
         //containEnemy = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         //Enemy enemy = gameObject.addComponent<Enemy> as Enemy;
         GameObject enemySphere = Instantiate(enemyPrefab, location.transform.position, location.transform.rotation);
+        Renderer rend = enemySphere.GetComponent<Renderer>();
+        rend.material.color = Color.red;
+
         enemySphere.SetActive(true);
         enemySphere.transform.position = location.transform.position;
         enemySphere.transform.rotation = location.transform.rotation;
@@ -44,7 +47,7 @@ public class EnemySpawn : MonoBehaviour
 
 
         enemies.Add(spawnedEnemy);
-        print("something happened...");
+        //print("something happened...");
         if (stopSpawning){
             CancelInvoke("SpawnObject");
         }

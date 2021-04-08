@@ -8,10 +8,12 @@ public class shootsAtEnemies : MonoBehaviour
 
     public GameObject[] targets;
     private float range = 3f;
-    private int counter = 0;
+    private int counter = 180;
 
     private Quaternion _lookRotation;
     private Vector3 _direction;
+
+    public GameObject bulletPrefab;
 
     void Start()
     {
@@ -40,6 +42,7 @@ public class shootsAtEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(counter);
         if (counter == 200){
             if (FindClosestEnemy()==null) {
                 
@@ -47,6 +50,7 @@ public class shootsAtEnemies : MonoBehaviour
                 gameObject.transform.LookAt(FindClosestEnemy().transform.position);
 
             }else if (Vector3.Distance(FindClosestEnemy().transform.position, gameObject.transform.position)<range){
+                print("we fired");
                 /*_direction = (FindClosestEnemy().transform.position - gameObject.transform.position).normalized;
                 gameObject.transform
                 //create the rotation we need to be in to look at the target
@@ -56,14 +60,23 @@ public class shootsAtEnemies : MonoBehaviour
                 gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, _lookRotation, Time.deltaTime);
 */             
                 gameObject.transform.LookAt(FindClosestEnemy().transform.position);
+                GameObject bullet = Instantiate(bulletPrefab, gameObject.transform.position, gameObject.transform.rotation);
+                //bullet.transform.position.x = bullet.transform.position.x - FindClosestEnemy().transform.position.x*.1;
+                //bullet.transform.position.z = bullet.transform.position.z - FindClosestEnemy().transform.position.z*.1;
 
-                Destroy(FindClosestEnemy());
+                bullet.transform.position = new Vector3(bullet.transform.position.x - FindClosestEnemy().transform.position.x*.1f, 
+                bullet.transform.position.y, bullet.transform.position.z - FindClosestEnemy().transform.position.z*.1f);
+                bullet.GetComponent<Rigidbody>().velocity 
+                    = new Vector3( (FindClosestEnemy().transform.position.x-bullet.transform.position.x)*5.0f,0,
+                5.0f*(FindClosestEnemy().transform.position.z-bullet.transform.position.z));
+
+
+                //Destroy(FindClosestEnemy());
                 counter=0;
             }
         } else {
-            if (FindClosestEnemy()!=null)
-                gameObject.transform.LookAt(FindClosestEnemy().transform.position);
-
+            /*if (FindClosestEnemy()!=null) 
+                gameObject.transform.LookAt(FindClosestEnemy().transform.position);*/
             counter++;
         }
     }
