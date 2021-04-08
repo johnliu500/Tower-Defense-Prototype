@@ -1,0 +1,118 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt, twoside]{article}
+ 
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+
+\usepackage{xcolor}
+
+\usepackage{url}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\usepackage{graphicx}
+
+% -------------------------------------------------------------
+% Setup constants 
+% -------------------------------------------------------------
+\newcommand{\name}{John Liu and Ryan Mao}
+\newcommand{\class}{CS 428: Intro to Computer Graphics}
+\newcommand{\hwTitle}{Project Milestone} % Change this for a new homework
+\newcommand{\due}{April 8, 2021} % Change this for a new homework
+
+
+% --------------------------------------------------------------
+% Setup header and footer.
+% --------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\hwTitle \hfill \thepage}
+\setlength{\headheight}{14.5pt}
+\fancyfoot[C]{\name \hfill \class}
+\renewcommand{\headrulewidth}{0.4pt} % default is 0pt
+\renewcommand{\footrulewidth}{0.4pt} % default is 0pt
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{\hwTitle} % replace X with the appropriate number
+\author{\name\\  % replace with your name
+\class} % if necessary, replace with your course title
+\date{\due}
+ 
+\maketitle
+
+\section*{Explanation}
+According to our project proposal timeline, we have completed everything that we want to. We are satisfied with where we are at in the project.
+
+\noindent
+Youtube demo video: 
+\url{https://www.youtube.com/watch?v=HIYj1EPDkms}
+\section*{Problems}
+\begin{enumerate}
+    \item 
+        We noticed that if the enemies move too fast, and the bullet speed is too slow, the bullets will miss the enemies. The bullet detects for collision with an enemy's collider, and then destroys itself and the enemy. To circumvent this issue without having to fiddle with enemy and bullet speed for each enemy and turret, we have decided to automatically damage an enemy if it is in range of a turret, and that turret is able to fire. Then we'll simply render a bullet from the turret to the enemy, but this bullet will not care about collision. That way we can give the illusion of the turret shooting a bullet projectile, but we do not need to worry about missing.
+    \item
+        As of now, we have the enemies as a "NavMeshAgent". This agent can only navigate from three points: beginning, middle, and end. This limits the amount of options that we can do for level paths. We also believe that this agent is performing constant search algorithms (like BFS or A-star) which could affect update rate and frame rate as these are fairly taxing. Our solution around this is to hard-code the paths and give them to each enemy, so at each update interval, all it needs to do is walk forward one "step".
+\end{enumerate}
+\section*{Future}
+In our project proposal timeline, we stated how we wanted to have certain logistics going forward. This is what we have discussed and settled on so far (although we have settled on this, this still is somewhat tentative):
+
+\begin{enumerate}
+    \item Currency
+        \begin{enumerate}
+            \item Begin with certain amount of currency.
+            \item Each enemy killed gives a certain amount of currency (These values could differ from enemy to enemy).
+        \end{enumerate}
+    \item Health
+        \begin{enumerate}
+            \item Begin with certain amount of health.
+            \item Each enemy that makes it to the end of the path deducts a certain amount of health from the total.
+            \item Once you reach zero health, you lose.
+        \end{enumerate}
+    \item Score
+        \begin{enumerate}
+            \item Time alive or
+            \item Enemies killed.
+        \end{enumerate}
+\end{enumerate}
+
+\noindent
+We believe we can create a polished tower defense game by the deadline.
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
