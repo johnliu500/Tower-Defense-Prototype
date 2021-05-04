@@ -17,7 +17,6 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject[] goal;
 
-    private int startEliteCount;
     private int counter;
 
     public GameObject notif;
@@ -43,17 +42,16 @@ public class EnemySpawn : MonoBehaviour
         GameObject enemySphere = Instantiate(enemyPrefab, location.transform.position, location.transform.rotation);
         Renderer rend = enemySphere.GetComponent<Renderer>();
         rend.material.color = Color.red;
-        if (startEliteCount<5)
-            startEliteCount++;
-        else{
-            notif.GetComponent<TextMeshPro>().SetText("Elite Enemies now Spawning");
+        counter++;
+        if (counter>5){
+            if (counter==8) notif.GetComponent<TextMeshPro>().SetText("Elite Enemies now Spawning");
+            if (counter==14) notif.GetComponent<TextMeshPro>().SetText("");
             counter++;
-            if (counter<5){
+            if (counter%5>0){
                 rend.GetComponent<enemyHP>().maxHP = 10;
             } else {
                 rend.material.color = Color.blue;
                 rend.GetComponent<enemyHP>().maxHP = 20;
-                counter = 0;
             }
         }
 

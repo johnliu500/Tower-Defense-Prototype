@@ -47,8 +47,8 @@ MonoBehaviour:
   targets: []
   bulletPrefab: {fileID: 364533753841811694, guid: 3ff33913c79dd2c4499737bfc3f05e63, type: 3}
   damageDealt: 10
-  buyPrice: 8
-  sellPrice: 4
+  buyPrice: 6
+  sellPrice: 2
 --- !u!1001 &175423091716124906
 PrefabInstance:
   m_ObjectHideFlags: 0

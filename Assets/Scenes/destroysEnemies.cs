@@ -21,7 +21,7 @@ public class destroysEnemies : MonoBehaviour
     void Update()
     {
         timeAlive++;
-        Destroy(gameObject, 1);
+        Destroy(gameObject, .2f);
     }
     void OnCollisionEnter(Collision col) 
     {
