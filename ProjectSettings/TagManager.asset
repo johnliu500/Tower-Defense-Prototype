@@ -7,6 +7,9 @@ TagManager:
   - Bullet
   - Enemy
   - Turret
+  - text
+  - canvas
+  - livesText
   layers:
   - Default
   - TransparentFX
