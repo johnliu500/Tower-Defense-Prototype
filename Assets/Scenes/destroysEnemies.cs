@@ -33,7 +33,7 @@ public class destroysEnemies : MonoBehaviour
             //Destroy(col.gameObject);
             col.gameObject.GetComponent<enemyHP>().TakesDamage(damageDealt);
             Destroy(gameObject);            
-        }else if ((col.gameObject.tag!="Turret") && (col.gameObject.tag!="Bullet")&& (timeAlive>10))
+        }else if ((col.gameObject.tag!="Turret") && (col.gameObject.tag!="Bullet")&& (timeAlive>20))
             Destroy(gameObject);
     }
 

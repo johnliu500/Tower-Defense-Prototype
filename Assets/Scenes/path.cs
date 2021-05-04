@@ -36,7 +36,7 @@ public class path : MonoBehaviour {
             GameObject[] gos;
             gos = GameObject.FindGameObjectsWithTag("livesText");
             string[] words = gos[0].GetComponent<TextMeshPro>().text.Split(' ');
-            gos[0].GetComponent<TextMeshPro>().SetText("Lives Left: "+(Int32.Parse(words[2])-1));
+            gos[0].GetComponent<TextMeshPro>().SetText("Lives Left: "+(Int32.Parse(words[2])-5));
             
 
             //Destroy(gameObject);

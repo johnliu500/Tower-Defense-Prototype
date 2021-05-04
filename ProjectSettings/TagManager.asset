@@ -10,6 +10,7 @@ TagManager:
   - text
   - canvas
   - livesText
+  - Wall
   layers:
   - Default
   - TransparentFX

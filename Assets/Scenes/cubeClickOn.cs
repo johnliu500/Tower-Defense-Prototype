@@ -75,6 +75,9 @@ public class cubeClickOn : MonoBehaviour
 
     }
 
+    public void reset(){
+        clickedOn = false;
+    }
     // Update is called once per frame
     void Update()
     {

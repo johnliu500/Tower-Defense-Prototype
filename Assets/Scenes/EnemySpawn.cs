@@ -17,7 +17,7 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject[] goal;
 
-    private int counter;
+    public int counter = 0;
 
     public GameObject notif;
 
@@ -36,9 +36,6 @@ public class EnemySpawn : MonoBehaviour
     }
 
     public void SpawnObject(){
-        //Enemy spawnedEnemy = new Enemy();
-        //containEnemy = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        //Enemy enemy = gameObject.addComponent<Enemy> as Enemy;
         GameObject enemySphere = Instantiate(enemyPrefab, location.transform.position, location.transform.rotation);
         Renderer rend = enemySphere.GetComponent<Renderer>();
         rend.material.color = Color.red;
