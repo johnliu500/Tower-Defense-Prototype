@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class helpPause : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public GameObject helpScreen;
+    void Start(){
+        Time.timeScale = 0;
+        helpScreen.GetComponent<Canvas>().enabled = true;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Pause(){
+        Time.timeScale = 0;
+        helpScreen.GetComponent<Canvas>().enabled = true;
+    }
+    public void Return(){
+        Time.timeScale = 1;
+        helpScreen.GetComponent<Canvas> ().enabled = false;
     }
 }

@@ -48,6 +48,9 @@ public class shootsAtEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0)
+            return;
+
        // print(counter);
         if (counter == interval){
             if (FindClosestEnemy()==null) {
@@ -85,8 +88,8 @@ public class shootsAtEnemies : MonoBehaviour
                 gameObject.GetComponent<AudioSource>().Play();
             }
         } else {
-            /*if (FindClosestEnemy()!=null) 
-                gameObject.transform.LookAt(FindClosestEnemy().transform.position);*/
+            if (FindClosestEnemy()!=null) 
+                gameObject.transform.LookAt(FindClosestEnemy().transform.position);
             counter++;
         }
     }
