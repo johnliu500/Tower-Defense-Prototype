@@ -3088,7 +3088,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eeab61cc24ee1c24ca1aa4a2c04a5db0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b1106a47c66060b4db35dd35a88cda17, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.15
   m_Pitch: 1
@@ -4152,7 +4152,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481655972}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
@@ -4175,7 +4175,7 @@ RectTransform:
   m_GameObject: {fileID: 1481655972}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.60652, y: 1, z: 1}
   m_Children:
   - {fileID: 1400659770}
   m_Father: {fileID: 0}
@@ -4221,7 +4221,7 @@ MonoBehaviour:
   location: {fileID: 113028067}
   stopSpawning: 0
   spawnTime: 3
-  spawnDelay: 1.5
+  spawnDelay: 3
   enemyPrefab: {fileID: 7687423479653003463, guid: 5933ff6d9b033e64eaac1f98a84e05b1, type: 3}
   goal:
   - {fileID: 1412292425}

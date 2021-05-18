@@ -50,7 +50,7 @@ MonoBehaviour:
   damageDealt: 10
   buyPrice: 6
   sellPrice: 2
-  interval: 250
+  interval: 200
 --- !u!82 &2251903494909033552
 AudioSource:
   m_ObjectHideFlags: 0
