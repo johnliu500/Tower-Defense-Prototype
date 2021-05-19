@@ -13,13 +13,11 @@ public class gameOver : MonoBehaviour
     private bool finished = false;
     public GameObject scoreBoard;
     public GameObject eliteSwitch;
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!finished){
@@ -32,15 +30,10 @@ public class gameOver : MonoBehaviour
 
     }
 
-    public void Finish(/*int score*/){
+    public void Finish(){
         gameObject.GetComponent<Canvas> ().enabled = true;
         string[] words = totalScore.GetComponent<TextMeshPro>().text.Split(' ');
-        //print(words[1]);/
-        //.GetChild(0).GetComponent<TextMeshPro>();
-        //gameObject.transform.GetChild(0).GetChild(1).GetComponent<TextMeshPro>().SetText("");
         scoreBoard.GetComponent<TMP_Text>().SetText("Final Score: "+words[1]);
-        ///print(gameObject.transform.GetChild(0).GetChild(1)/*.text*/);
-
     }
 
     public void Restart(){

@@ -12,7 +12,6 @@ public class invisibleSetup : MonoBehaviour
         rend.enabled = true;
     }
 
-    // Toggle the Object's visibility each second.
     void Update()
     {
         rend.enabled = false;

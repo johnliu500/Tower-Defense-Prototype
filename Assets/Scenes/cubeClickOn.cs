@@ -5,8 +5,6 @@ using System;
 using TMPro;
 using UnityEngine.UI;
 
-
-
 public class cubeClickOn : MonoBehaviour
 {
     public GameObject[] turretPrefab;
@@ -14,7 +12,6 @@ public class cubeClickOn : MonoBehaviour
     public Toggle[] toggles;
 
     private GameObject menu;
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -22,20 +19,10 @@ public class cubeClickOn : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Destroy the gameObject after clicking on it
-        //Destroy(gameObject);
-        //print("Hello World");
-        //print(turretPrefab.Length);
-        foreach (var toggle in toggles)
-        {
-            //print(toggle.isOn);
-        }
-
         if (!clickedOn){
             GameObject[] gos;
             gos = GameObject.FindGameObjectsWithTag("text");
             string[] words = gos[0].GetComponent<TextMeshPro>().text.Split(' ');
-            //gos[0].GetComponent<TextMeshPro>().SetText("Currency: "+(Int32.Parse(words[1])));
             
             if (toggles[0].isOn){
                 if (Int32.Parse(words[1]) >= 3){
@@ -57,9 +44,6 @@ public class cubeClickOn : MonoBehaviour
                 }
 
             }
-            //GameObject parent = (GameObject)FindObjectOfType(typeof(cubeClickOn));
-                
-            //shootsAtEnemies shoots = menu.AddComponent<shootsAtEnemies>();
         } else {
             clickedOn = false;
 
@@ -78,7 +62,6 @@ public class cubeClickOn : MonoBehaviour
     public void reset(){
         clickedOn = false;
     }
-    // Update is called once per frame
     void Update()
     {
         

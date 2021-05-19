@@ -11,9 +11,7 @@ public class EnemySpawn : MonoBehaviour
     public bool stopSpawning = false;
     public float spawnTime;
     public float spawnDelay;
-    //public int numEnemies = 5;
     private List<Enemy> enemies;
-    //private int counter = 0;
     public GameObject enemyPrefab;
     public GameObject[] goal;
 
@@ -21,15 +19,12 @@ public class EnemySpawn : MonoBehaviour
 
     public GameObject notif;
 
-    // Start is called before the first frame update
     void Start()
     {
-        //print("started");
         enemies = new List<Enemy>();
         InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
